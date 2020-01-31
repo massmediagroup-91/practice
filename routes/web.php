@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/create', 'HomeController@create')->name('file.create');
+Route::post('/store', 'HomeController@store')->name('file.store');
+Route::get('/file/{id}',['as' => 'file.details', 'uses' => 'HomeController@getFileDetails','middleware' => 'view.file']);
+Route::get('/delete/{id}', 'HomeController@destroy')->name('file.destroy');
+Route::get('/generate-link', 'HomeController@generatelink')->name('file.generate');
