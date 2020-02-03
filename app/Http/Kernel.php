@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CountOfView;
 use App\Http\Middleware\ViewFile;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -63,6 +64,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'view.file' => ViewFile::class,
+        'count.view' => CountOfView::class
     ];
 
     /**

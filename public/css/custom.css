@@ -1,0 +1,21 @@
+.generated-link {
+    margin-left: 13px;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+.disposable-link {
+    width: 210px;
+}
+
+.disposable-link-list {
+    width: 210px;
+    padding: 0;
+}
+
+.disposable-link-list li {
+    margin-top: 10px;
+}
