@@ -20,9 +20,11 @@ class ViewFile
         $user = File::query()
             ->where('id', $request->route()->parameters['id'])
             ->first('user_id');
+
         if (!empty($user) && $user->user_id !== $request->user()->id) {
             abort(403, 'Forbidden');
         }
+
         return $next($request);
     }
 }

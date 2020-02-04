@@ -5,9 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property mixed view
- * @property mixed file_id
- * @method static find($id)
+ * @property int view
+ * @property int file_id
  */
 class View extends Model
 {

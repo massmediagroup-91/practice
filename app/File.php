@@ -2,13 +2,16 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property mixed name
- * @property mixed comment
- * @property mixed user_id
- * @property mixed deleted_at
+ * @property string name
+ * @property string comment
+ * @property int user_id
+ * @property Carbon|null deleted_at
+ * @property int id
+ * @property Carbon|null when_delete
  */
 class File extends Model
 {

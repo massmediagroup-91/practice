@@ -20,23 +20,24 @@
                         <a href="{{ route('file.destroy', ['id' => $file->id]) }}" class="btn btn-danger">Delete</a>
                     </div>
                     <div class="col-md-5">
-                        <a href="{{ route('file.generate', ['id' => $file->id]) }}" class="btn btn-dark">Generate link</a>
+                        <a href="{{ route('file.static.generate', ['id' => $file->id]) }}" class="btn btn-dark">Generate
+                            link</a>
                     </div>
                     <label>
                         <input class="form-control generated-link" type="text" readonly value="{{ $link ?? '' }}">
                     </label>
                 </div>
-                <a href="{{ route('file.disposable.generate', ['id' => $file->id]) }}" class="btn btn-dark disposable-link">Generate disposable link</a>
+                <a href="{{ route('file.disposable.generate', ['id' => $file->id]) }}"
+                   class="btn btn-dark disposable-link">Generate disposable link</a>
                 <ol class="disposable-link-list">
                     @forelse ($disposableLinks as $disposableLink)
-                        <li><input type="text" class="form-control" readonly value="{{ route('check.disposable.link', [$disposableLink->token]) }}"></li>
+                        <li><input type="text" class="form-control" readonly
+                                   value="{{ route('check.disposable.link', [$disposableLink->token]) }}"></li>
                     @empty
                         <p>Nothing to show</p>
                     @endforelse
                 </ol>
             </div>
         </div>
-    </div>
-
     </div>
 @endsection

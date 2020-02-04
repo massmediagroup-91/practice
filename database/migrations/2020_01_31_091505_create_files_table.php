@@ -18,8 +18,8 @@ class CreateFilesTable extends Migration
             $table->string('name');
             $table->text('comment');
             $table->integer('user_id')->unsigned();
-            $table->timestamp('deleted_at');
-            $table->string('token');
+            $table->timestamp('when_delete')->nullable();
+            $table->softDeletes();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

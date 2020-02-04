@@ -6,14 +6,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreUserFileRequest extends FormRequest
 {
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
+            'name' => ['required', 'image', 'max:5120'],
             'comment' => ['required', 'string'],
         ];
     }
