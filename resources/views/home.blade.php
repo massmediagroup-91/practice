@@ -4,8 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="content">
+            <div class="content main-btn">
                 <p><a href="{{ route('file.create') }}" class="btn btn-primary float-right">Add files</a></p>
+                <p><a href="{{ route('file.report') }}" class="btn btn-dark float-right">Report</a></p>
 
                 {{ 'Count of files: ' . $countOfFiles }}
                 <ul>

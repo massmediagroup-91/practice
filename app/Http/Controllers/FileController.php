@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\File;
 use App\Services\FileService;
+use App\Services\ReportService;
 use App\View;
 use App\FileToken;
 use App\Http\Requests\StoreUserFileRequest;
@@ -55,7 +56,7 @@ class FileController extends Controller
         $link = FileToken::query()
             ->where('file_id', $id)
             ->where('type', FileToken::TYPE_STATIC)
-            ->firstOrFail();
+            ->first();
 
         $disposableLinks = FileToken::query()
             ->where('file_id', $id)
@@ -64,7 +65,7 @@ class FileController extends Controller
 
         $views = View::query()
             ->where('file_id', $id)
-            ->firstOrFail();
+            ->first();
 
         if ($link) {
             $link = route('check.static.link', [$link->token]);
@@ -80,7 +81,7 @@ class FileController extends Controller
 
     public function destroy(int $id): RedirectResponse
     {
-       $this->service->destroy($id);
+        $this->service->destroy($id);
 
         return redirect()->route('home');
     }

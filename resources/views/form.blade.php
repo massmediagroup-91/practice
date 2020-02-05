@@ -20,7 +20,7 @@
             <textarea type="text" class="form-control" name="comment" placeholder="Comment" required>{{$post->comment ?? ''}}</textarea>
             <br>
             <label for="">When delete?</label>
-            <input type="date" class="form-control" name="deleted_at" placeholder="When delete file?">
+            <input type="datetime-local" class="form-control" name="when_delete" placeholder="When delete file?">
             <br>
             <input type="submit" class="btn btn-success" value="Save">
         </form>

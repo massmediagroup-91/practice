@@ -19,3 +19,7 @@ h5 {
 .disposable-link-list li {
     margin-top: 10px;
 }
+
+.main-btn p a {
+    margin-right: 10px;
+}

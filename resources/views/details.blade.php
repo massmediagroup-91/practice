@@ -9,8 +9,8 @@
                 @endif
                 <h5>{{ $file->name }}</h5>
                 <p>{{ $file->comment }}</p>
-                @if(!empty($file->deleted_at))
-                    <p>{{ $file->deleted_at }}</p>
+                @if(!empty($file->when_delete))
+                    <p>File will delete: {{ $file->when_delete }}</p>
                 @endif
                 <p>Views: {{ $views->view }}</p>
             </div>

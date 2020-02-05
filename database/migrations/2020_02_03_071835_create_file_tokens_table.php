@@ -18,6 +18,7 @@ class CreateFileTokensTable extends Migration
             $table->string('token');
             $table->integer('file_id');
             $table->integer('type');
+            $table->softDeletes();
             $table->timestamps();
             $table->foreign('file_id')->references('id')->on('files');
 
