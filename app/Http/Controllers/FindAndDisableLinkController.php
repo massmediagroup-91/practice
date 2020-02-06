@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\FindLinkService;
+use App\Services\FindAndDisableLinkService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class FindLinkController extends Controller
+class FindAndDisableLinkController extends Controller
 {
-    private FindLinkService $service;
+    private FindAndDisableLinkService $service;
 
-    public function __construct(FindLinkService $findLinkService)
+    public function __construct(FindAndDisableLinkService $findAndDisableLinkService)
     {
-        $this->service = $findLinkService;
+        $this->service = $findAndDisableLinkService;
     }
 
-    public function findStaticLink(string $token): ?View
+    public function findStaticLink(string $token): View
     {
         $link = $this->service->findStaticLink($token);
 

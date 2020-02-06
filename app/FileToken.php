@@ -32,4 +32,10 @@ class FileToken extends Model
     public const TYPE_DISPOSABLE = 1;
 
     protected $fillable = ['token', 'file_id'];
+
+    public function file()
+    {
+        return $this->hasOne('App\File');
+    }
+
 }

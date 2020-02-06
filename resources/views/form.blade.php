@@ -14,7 +14,7 @@
         <form class="form-horizontal" action="{{route('file.store')}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <label for="">Name</label>
-            <input type="file" class="form-control" name="name" placeholder="Name" value="{{$post->name ?? ''}}" required>
+            <input type="file" class="form-control" name="path" placeholder="Path" value="{{$post->path ?? ''}}" required>
             <br>
             <label for="">Comment</label>
             <textarea type="text" class="form-control" name="comment" placeholder="Comment" required>{{$post->comment ?? ''}}</textarea>

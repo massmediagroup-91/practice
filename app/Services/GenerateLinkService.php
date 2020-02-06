@@ -6,7 +6,7 @@ namespace App\Services;
 
 use App\FileToken;
 
-class GenerateService
+class GenerateLinkService
 {
     public function generateStaticLink(int $id): FileToken
     {

@@ -34,4 +34,9 @@ class File extends Model
 {
     use SoftDeletes;
     protected $fillable = ['name', 'comment', 'deleted_at', 'user_id'];
+
+    public function fileTokens()
+    {
+        return $this->hasMany('App\FileToken');
+    }
 }

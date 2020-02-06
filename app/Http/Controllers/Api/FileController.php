@@ -37,7 +37,8 @@ class FileController extends Controller
         return response()->download(storage_path('app/public/' . $file->path));
     }
 
-    public function destroy(int $id): JsonResponse {
+    public function destroy(int $id): JsonResponse
+    {
         $this->service->destroy($id);
 
         return response()->json([

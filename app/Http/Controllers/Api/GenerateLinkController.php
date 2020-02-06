@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Services\GenerateService;
+use App\Services\GenerateLinkService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class GenerateController extends Controller
+class GenerateLinkController extends Controller
 {
-    private GenerateService $service;
+    private GenerateLinkService $service;
 
-    public function __construct(GenerateService $generateService)
+    public function __construct(GenerateLinkService $generateService)
     {
         $this->service = $generateService;
     }

@@ -8,7 +8,7 @@ use App\File;
 use App\FileToken;
 use Illuminate\View\View;
 
-class FindLinkService
+class FindAndDisableLinkService
 {
     public function findStaticLink(string $token): ?string
     {
@@ -18,9 +18,7 @@ class FindLinkService
             ->firstOrFail();
 
         if ($link) {
-            $file = File::query()
-                ->where('id', $link->file_id)
-                ->firstOrFail();
+            $file = File::query()->find($link->file_id);
 
             return asset("storage/$file->path");
         }
@@ -36,9 +34,7 @@ class FindLinkService
             ->firstOrFail();
 
         if ($link) {
-            $file = File::query()
-                ->where('id', $link->file_id)
-                ->firstOrFail();
+            $file = File::query()->find($link->file_id);
 
             return asset("storage/$file->path");
         }

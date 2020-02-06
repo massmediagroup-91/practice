@@ -15,7 +15,8 @@ class ReportController extends Controller
         $this->service = $reportService;
     }
 
-    public function index(): View {
+    public function index(): View
+    {
         return view('report', [
             'countOfView' => $this->service->countOfView(),
             'countOfFiles' => $this->service->countOfFiles(),
