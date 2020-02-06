@@ -39,7 +39,8 @@ class FileController extends Controller
 
     public function store(StoreUserFileRequest $request): RedirectResponse
     {
-        $this->service->upload($request->all(), $request->only('name')['name']);
+        $user = $request->user();
+        $this->service->upload($request->all(), $request->only('name')['name'], $user);
 
         return redirect()->route('home');
     }

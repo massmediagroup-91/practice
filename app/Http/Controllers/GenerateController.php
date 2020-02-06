@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\LinkService;
+use App\Services\GenerateService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
-class LinkController extends Controller
+class GenerateController extends Controller
 {
-    private LinkService $service;
+    private GenerateService $service;
 
-    public function __construct(LinkService $linkService)
+    public function __construct(GenerateService $generateService)
     {
-        $this->service = $linkService;
+        $this->service = $generateService;
     }
 
     public function generateStaticLink(int $id): RedirectResponse
@@ -19,16 +20,6 @@ class LinkController extends Controller
         $this->service->generateStaticLink($id);
 
         return redirect()->route('file.details', [$id]);
-    }
-
-    public function checkStaticLink(string $token): string
-    {
-        return $this->service->checkStaticLink($token);
-    }
-
-    public function checkDisposableLink(string $token): string
-    {
-       return $this->service->checkDisposableLink($token);
     }
 
     public function generateDisposableLink(int $id): RedirectResponse

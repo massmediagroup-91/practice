@@ -11,7 +11,7 @@
                 {{ 'Count of files: ' . $countOfFiles }}
                 <ul>
                     @forelse ($files as $file)
-                        <li><a href="{{ route('file.details', ['id' => $file->id]) }}">{{ $file->name }}</a></li>
+                        <li><a href="{{ route('file.details', ['id' => $file->id]) }}">{{ $file->path }}</a></li>
                     @empty
                         <p>Nothing to show</p>
                     @endforelse

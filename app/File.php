@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * App\File
  *
- * @property string name
+ * @property string path
  * @property string comment
  * @property int user_id
  * @property Carbon|null deleted_at

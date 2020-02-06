@@ -3,18 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Services\LinkService;
+use App\Services\GenerateService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class LinkController extends Controller
+class GenerateController extends Controller
 {
-    private $service;
+    private GenerateService $service;
 
-    public function __construct(LinkService $linkService)
+    public function __construct(GenerateService $generateService)
     {
-        $this->service = $linkService;
+        $this->service = $generateService;
     }
 
     public function generateStaticLink(int $id): JsonResponse
@@ -35,15 +34,5 @@ class LinkController extends Controller
             'status' => 'success',
             'disposable_link' => route('api.check.disposable.link', [$fileToken->token])
         ]);
-    }
-
-    public function checkStaticLink(string $token): string
-    {
-        return $this->service->checkStaticLink($token);
-    }
-
-    public function checkDisposableLink(string $token): string
-    {
-        return $this->service->checkDisposableLink($token);
     }
 }

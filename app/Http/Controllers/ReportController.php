@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Services\ReportService;
-use App\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ReportController extends Controller
 {
@@ -15,7 +15,7 @@ class ReportController extends Controller
         $this->service = $reportService;
     }
 
-    public function index() {
+    public function index(): View {
         return view('report', [
             'countOfView' => $this->service->countOfView(),
             'countOfFiles' => $this->service->countOfFiles(),
@@ -25,6 +25,4 @@ class ReportController extends Controller
         ]);
 
     }
-
-
 }

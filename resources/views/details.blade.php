@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                @unless(is_null($file->name))
-                    <img width="400px" src="{{ asset('storage/'. $file->name) }}">
+                @unless(is_null($file->path))
+                    <img width="400px" src="{{ asset('storage/'. $file->path) }}">
                 @endif
-                <h5>{{ $file->name }}</h5>
+                <h5>{{ $file->path }}</h5>
                 <p>{{ $file->comment }}</p>
                 @if(!empty($file->when_delete))
                     <p>File will delete: {{ $file->when_delete }}</p>

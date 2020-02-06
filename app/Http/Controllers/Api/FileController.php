@@ -21,7 +21,9 @@ class FileController extends Controller
 
     public function upload(StoreUserFileRequest $request): JsonResponse
     {
-        $file = $this->service->upload($request->all(), $request->file('name'));
+        $user = $request->user();
+
+        $file = $this->service->upload($request->validated(), $request->file('name'), $user);
 
         return response()->json(['file_id' => $file->id], 200);
     }
@@ -32,7 +34,7 @@ class FileController extends Controller
             ->where('id', $fileId)
             ->firstOrFail('name');
 
-        return response()->download(storage_path('app/public/' . $file->name));
+        return response()->download(storage_path('app/public/' . $file->path));
     }
 
     public function destroy(int $id): JsonResponse {
