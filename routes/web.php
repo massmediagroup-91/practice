@@ -28,4 +28,4 @@ Route::middleware(['auth'])->group(function() {
 });
 
 Route::get('/record/{token}', 'FindAndDisableLinkController@findStaticLink')->name('check.static.link');
-Route::get('/record/disposable/{token}', 'FindAndDisableLinkController@DisposableLink')->name('check.disposable.link');
+Route::get('/record/disposable/{token}', 'FindAndDisableLinkController@disposableLink')->name('check.disposable.link');

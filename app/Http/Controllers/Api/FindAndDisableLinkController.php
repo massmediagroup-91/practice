@@ -27,7 +27,7 @@ class FindAndDisableLinkController extends Controller
         ]);
     }
 
-    public function DisposableLink(string $token): JsonResponse
+    public function disposableLink(string $token): JsonResponse
     {
         $link = $this->service->findDisposableLink($token);
 

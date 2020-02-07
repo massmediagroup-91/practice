@@ -29,5 +29,5 @@ Route::group(['namespace' => 'Api'], function () {
     Route::get('generate-link/{id}', 'GenerateLinkController@generateStaticLink')->middleware('auth:api');
     Route::get('disposable-link/{id}', 'GenerateLinkController@generateDisposableLink')->middleware('auth:api');
     Route::get('record/{token}', 'FindAndDisableLinkController@findStaticLink')->name('api.check.static.link');
-    Route::get('record/disposable/{token}', 'FindAndDisableLinkControllerr@DisposableLink')->name('api.check.disposable.link');
+    Route::get('record/disposable/{token}', 'FindAndDisableLinkControllerr@disposableLink')->name('api.check.disposable.link');
 });

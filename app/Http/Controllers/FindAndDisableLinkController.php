@@ -24,7 +24,7 @@ class FindAndDisableLinkController extends Controller
         ]);
     }
 
-    public function DisposableLink(string $token): ?View
+    public function disposableLink(string $token): ?View
     {
         $link = $this->service->findDisposableLink($token);
         $this->service->disableDisposableLink($token);

@@ -37,6 +37,6 @@ class File extends Model
 
     public function fileTokens()
     {
-        return $this->hasMany('App\FileToken');
+        return $this->hasMany(App\FileToken::class);
     }
 }

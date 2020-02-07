@@ -35,7 +35,7 @@ class FileToken extends Model
 
     public function file()
     {
-        return $this->hasOne('App\File');
+        return $this->hasOne(App\File::class);
     }
 
 }
